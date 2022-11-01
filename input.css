@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {  
+  aside {
+    left: 0;
+    top: 60px;
+  }
+.btn-sidebar-close {
+  display: none;
+}
+.table-property thead,
+.table-property tbody tr {
+  border-bottom: 1px solid silver;
+}
+.table-property th,
+.table-property td {
+  padding: 10px 20px;
+}
+#dropdownTableFilterBtn svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+  @media (max-width: 1024px) {
+    .btn-sidebar-close {
+      display: block;
+    }
+    aside {      
+      transform: translateX(-100%);
+      opacity: 0;      
+      display: block; 
+      top: 0;   
+       
+      
+    }        
+    aside.isVisible {
+      transform: translateX(0);
+      opacity: 1;
+      display: block;
+      z-index: 9000;
+      transition: all 0.5s;       
+    }
+  }
+  @media (max-width: 768px) {
+    .table-wrap {
+      overflow-x: scroll;
+    } 
+  }
+ 
+
+}
